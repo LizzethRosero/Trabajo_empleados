@@ -41,8 +41,8 @@
           <div class="col-6">
             <div class="card">
               <div class="form-outline">
-                <input type="text" id="typeText" class="form-control" />
-                <label class="form-label" for="typeText">Text input</label>
+                <input type="text" id="nombre" class="form-control" />
+                <label class="form-label" for="nombre">Ingrese Nombre</label>
               </div>
             </div>
           </div>
@@ -63,8 +63,8 @@
           <div class="col-6">
             <div class="card">
               <div class="form-outline">
-                <input type="text" id="typeText" class="form-control" />
-                <label class="form-label" for="typeText">Text input</label>
+                <input type="text" id="apellido" class="form-control" />
+                <label class="form-label" for="apellido">Ingrese Apellido</label>
               </div>
             </div>
           </div>
@@ -84,9 +84,9 @@
           </div>
           <div class="col-3">
             <div class="card">
-              <select id="" name="" class="selecc">
-                <option value="F">Femenino</option>
-                <option value="M">Masculino</option>
+              <select id="genero" name="" class="selecc">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
               </select>
             </div>
 
@@ -107,7 +107,7 @@
           <div class="col-3">
             <div class="card">
               <div class="">
-                <input type="date" id="typeText" class="selecc" />
+                <input type="date" id="fecha_nacimiento" class="selecc" />
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@
           <div class="col-3">
             <div class="card">
               <div class="">
-                <input type="date" id="typeText" class="selecc" />
+                <input type="date" id="fecha_ingreso" class="selecc" />
               </div>
             </div>
           </div>
@@ -163,9 +163,9 @@
       <div class="col-3">
         <div class="card">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+            <input type="number" id="salario" class="form-control" placeholder="Ingrese Salario" aria-label="Ingrese su Salario"
               aria-describedby="button-addon2" />
-            <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="modificar()">
               Modificar
             </button>
           </div>
@@ -185,24 +185,25 @@
       <div class="col-5">
         <div class="card">
           <div class="input-group mb-3">
-            <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark">
+            <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark" onmouseover="showHelp()" onmouseout="hideHelp()">
               Calcular Edad
             </button>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+            <span id="help"></span>
+            <input type="text" id="edad" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
               aria-describedby="button-addon1" />
           </div>
           <div class="input-group mb-3">
             <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark">
               Calcular Antiguedad
             </button>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+            <input type="text" id="antiguedad" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
               aria-describedby="button-addon1" />
           </div>
           <div class="input-group mb-3">
             <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark">
               Calcular Prestaciones
             </button>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+            <input type="text" id="prestaciones" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
               aria-describedby="button-addon1" />
           </div>
 
@@ -266,7 +267,7 @@
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript" src="./js/empleado.js"></script>
 </body>
 
 </html>
