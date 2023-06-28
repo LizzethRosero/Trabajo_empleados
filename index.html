@@ -19,20 +19,270 @@
 
 <body>
 
-<br>
-  <div class="container cont">
-    <div>
-      <p> Datos Personales
-      <p>
+  <br>
+  <form action="">
+
+    <div class="container cont">
+      <div>
+        <p> Datos Personales
+        <p>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Nombre:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <div class="form-outline">
+                  <input type="text" id="nombre" class="form-control" oninput="validarNombre()" />
+                  <label class="form-label" for="nombre">Ingrese Nombre</label>
+                </div>
+              </div>
+              <span class="text-danger" id="texto_nombre"></span>
+            </div>
+
+
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-2"></div>
+
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Apellido:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <div class="form-outline">
+                  <input type="text" id="apellido" class="form-control" />
+                  <label class="form-label" for="apellido">Ingrese Apellido</label>
+                </div>
+              </div>
+              <span class="text-danger" id="texto_apellido"></span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-2"></div>
+
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Sexo:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card">
+                <select id="genero" name="" class="selecc">
+                  <option value="Femenino">Femenino</option>
+                  <option value="Masculino">Masculino</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Fecha de Nacimiento:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card">
+                <div class="">
+                  <input type="date" id="fecha_nacimiento" class="selecc" />
+                </div>
+              </div>
+              <span class="text-danger" id="texto_fechaN"></span>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Fecha de Ingreso:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card">
+                <div class="">
+                  <input type="date" id="fecha_ingreso" class="selecc" />
+                </div>
+              </div>
+              <span class="text-danger" id="texto_fechaI"></span>
+            </div>
+          </div>
+
+
+
+          <br>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+              <div class="card">
+                <div>
+                  <p> Imagen:
+                  <p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card">
+                <div class="">
+                  <input type="file" id="imagen" class="selecc" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" id="imagenDiv">
+            <img src="img/perfil.png" alt="Fissure in Sandstone" />
+          </div>
+        </div>
+      </div>
+
+    </div><br>
+    <div class="container cont">
+
+      <div>
+        <p> Salario
+        <p>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-2">
+          <div class="card">
+            <div>
+              <p> Salario:
+              <p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="input-group">
+              <input type="text" id="salario" class="form-control" placeholder="Ingrese Salario"
+                aria-label="Ingrese su Salario" aria-describedby="button-addon2" />
+              <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark"
+                onclick="modificar()">
+                Modificar
+              </button>
+            </div>
+
+
+          </div>
+          <span class="text-danger" id="texto_salario"></span>
+        </div>
+      </div>
+    </div><br>
+    <div class="container cont">
+      <div>
+        <p> Cálculo
+        <p>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-5">
+          <div class="card">
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark"
+                onclick="calcular_edad()">
+                Calcular Edad
+              </button>
+              <span id="help"></span>
+              <input type="text" id="edad" readonly class="form-control" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1" />
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark"
+                onclick="calcular_anti()">
+                Calcular Antiguedad
+              </button>
+              <input type="text" id="antiguedad" readonly class="form-control" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1" />
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark"
+                onclick="calcular_pres()">
+                Calcular Prestaciones
+              </button>
+              <input type="text" id="prestaciones" readonly class="form-control" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1" />
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div><br>
+    <div class="container cont">
+      <div>
+        <p> Puntos de Extensìon
+        <p>
+      </div>
+
+      <div class="input-group  d-flex justify-content-center">
+
+        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="calcular_edad1()">
+          Opción 1
+        </button>
+        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="calcular_edad2()">
+          Opción 2
+        </button>
+      </div>
     </div>
-    <div class="row">
+  </form>
+  <br>
+
+  <!-- ----------------------------------------------- -->
+
+  <div class="container cont">
+    <form action="">
+      <div>
+        <p> Datos Académicos
+        <p>
+      </div>
       <div class="col-9">
         <div class="row">
           <div class="col-2"></div>
           <div class="col-4">
             <div class="card">
               <div>
-                <p> Nombre:
+                <p> Codigo estudiantil:
                 <p>
               </div>
 
@@ -41,13 +291,13 @@
           <div class="col-6">
             <div class="card">
               <div class="form-outline">
-                <input type="text" id="nombre" class="form-control" oninput="validarNombre()"/>
+                <input type="text" id="nombre" class="form-control" oninput="validarNombre()" />
                 <label class="form-label" for="nombre">Ingrese Nombre</label>
-              </div>  
+              </div>
             </div>
             <span class="text-danger" id="texto_nombre"></span>
           </div>
-          
+
 
         </div>
         <br>
@@ -77,196 +327,20 @@
         <div class="row">
           <div class="col-2"></div>
 
-          <div class="col-4">
-            <div class="card">
-              <div>
-                <p> Sexo:
-                <p>
-              </div>
 
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <select id="genero" name="" class="selecc">
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-              </select>
-            </div>
 
-          </div>
         </div>
         <br>
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col-4">
-            <div class="card">
-              <div>
-                <p> Fecha de Nacimiento:
-                <p>
-              </div>
 
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <div class="">
-                <input type="date" id="fecha_nacimiento" class="selecc" />
-              </div>
-            </div>
-            <span class="text-danger" id="texto_fechaN"></span>
 
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col-4">
-            <div class="card">
-              <div>
-                <p> Fecha de Ingreso:
-                <p>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <div class="">
-                <input type="date" id="fecha_ingreso" class="selecc" />
-              </div>
-            </div>
-            <span class="text-danger" id="texto_fechaI"></span>
-          </div>
-        </div>
 
       </div>
-
-      <div class="col-3">
-        <div class="card">
-          <img src="img/perfil.png" alt="Fissure in Sandstone" />
-        </div>
-      </div>
-    </div>
-
-  </div><br>
-  <div class="container cont">
-
-    <div>
-      <p> Salario
-      <p>
-    </div>
-
-    <div class="row d-flex justify-content-center">
-      <div class="col-2">
-        <div class="card">
-          <div>
-            <p> Salario:
-            <p>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <div class="input-group">
-            <input type="text" id="salario" class="form-control" placeholder="Ingrese Salario" aria-label="Ingrese su Salario"
-              aria-describedby="button-addon2" />
-            <button class="btn btn-outline-primary" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="modificar()">
-              Modificar
-            </button>
-          </div>
-         
-
-        </div>
-         <span class="text-danger" id="texto_salario"></span>
-      </div>
-    </div>
-  </div><br>
-  <div class="container cont">
-    <div>
-      <p> Cálculo
-      <p>
-    </div>
-
-    <div class="row d-flex justify-content-center">
-      <div class="col-5">
-        <div class="card">
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="calcular_edad()">
-              Calcular Edad
-            </button>
-            <span id="help"></span>
-            <input type="text" id="edad" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
-              aria-describedby="button-addon1" />
-          </div>
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="calcular_anti()">
-              Calcular Antiguedad
-            </button>
-            <input type="text" id="antiguedad" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
-              aria-describedby="button-addon1" />
-          </div>
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-primary" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="calcular_pres()">
-              Calcular Prestaciones
-            </button>
-            <input type="text" id="prestaciones" readonly class="form-control" placeholder="" aria-label="Example text with button addon"
-              aria-describedby="button-addon1" />
-          </div>
-
-
-        </div>
-      </div>
-
-    </div>
-  </div><br>
-  <div class="container cont">
-    <div>
-      <p> Puntos de Extensìon
-      <p>
-    </div>
-
-    <div class="input-group  d-flex justify-content-center">
-
-      <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="calcular_edad1()">
-        Opción 1
-      </button>
-      <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="calcular_edad2()">
-        Opción 2
-      </button>
-    </div>
-
-
-
-
-
-
-
 
 
 
   </div>
+  </form>
   <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- ----------------------------------------------- -->
 
 
 
