@@ -154,13 +154,7 @@ function calcular_edad() {
 }
 
 
-function showHelp() {
-    let texto = document.getElementById("help");
-    let mensaje = "Calcular edad del empleado";
-    texto.textContent = mensaje;
-}
-function hideHelp() {
-    let texto = document.getElementById("help");
-    let mensaje = "";
-    texto.textContent = mensaje;
+function datos_acad() {
+    document.getElementById("datos_academicos").style="block";
+    
 }
