@@ -154,6 +154,34 @@ function calcular_edad() {
 }
 
 
+function calcular_anti() {
+    //INGRESO DE DATOS
+    let nombre_emp = document.getElementById("nombre").value;
+    let apellido_emp = document.getElementById("apellido").value;
+    let genero_emp = document.getElementById("genero").value;
+    let fechaN_emp = document.getElementById("fecha_nacimiento").value;
+    // let foto_emp = document.getElementById("nombre").value;
+    let fechaI_emp = document.getElementById("fecha_ingreso").value;
+    let salario_emp = document.getElementById("salario").value;
+
+    console.log(nombre_emp, apellido_emp, genero_emp, fechaN_emp, fechaI_emp, salario_emp);
+
+    if (validarCampos(nombre_emp, apellido_emp, genero_emp, fechaN_emp, fechaI_emp, salario_emp) == true) {
+        let fechaIngreso=new Date(fechaI_emp)
+        let fechaActual = new Date();//Creamos una variable con la fecha de hoy
+        let diferenciaMilisegundos=fechaActual-fechaIngreso;
+
+        //Convertir los milisegundos a años, el numero 31557600000 es una aproximacion de la cantidad de milisegundos en un año
+        let antiguedad=Math.floor(diferenciaMilisegundos/31557600000);
+        console.log(antiguedad);
+        document.getElementById("antiguedad").value=antiguedad;
+
+    } else {
+        console.log("Datos incorrectos");
+    }
+}
+
+
 function datos_acad() {
     document.getElementById("datos_academicos").style="block";
     
