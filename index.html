@@ -18,7 +18,51 @@
 </head>
 
 <body>
-
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Datos Académicos</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <h4 id="mensaje_datos"></h4>
+          <h4>Sus datos:</h4>
+          <h6 id="mostrar_codigo"></h6>
+          <h6 id="mostrar_programa"></h6>
+          <h6 id="mostrar_universidad"></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
+          <!-- <button type="button" class="btn btn-primary">Guardar</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="myModalDatos">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Datos ingresados</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <h1 id="mensaje_principal">Los datos que has ingresado son:</h1>
+          <div id="mostrar_imagen"></div>
+          <h6 id="mostrar_nombre"></h6>
+          <h6 id="mostrar_apellido"></h6>
+          <h6 id="mostrar_genero"></h6>
+          <h6 id="mostrar_fechaN"></h6>
+          <h6 id="mostrar_fechaI"></h6>
+          <h6 id="mostrar_salario"></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
+          <!-- <button type="button" class="btn btn-primary">Guardar</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
   <form action="">
 
@@ -168,7 +212,7 @@
 
         <div class="col-3">
           <div class="card" id="imagenDiv">
-            <img src="img/perfil.png" alt="Fissure in Sandstone" />
+            <img id="imagen_cargada" src="img/perfil.png" alt="Fissure in Sandstone" />
           </div>
         </div>
       </div>
@@ -258,10 +302,10 @@
       <div class="input-group  d-flex justify-content-center">
 
         <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="datos_acad()">
-          Opción 1
+          Datos Académicos
         </button>
-        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" onclick="calcular_edad2()">
-          Opción 2
+        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" data-mdb-toggle="modal" data-mdb-target="#myModalDatos" onclick="visualizar_datos()">
+          Visualizar Datos
         </button>
       </div>
     </div>
@@ -291,8 +335,8 @@
           <div class="col-6">
             <div class="card">
               <div class="form-outline">
-                <input type="text" id="codigo" class="form-control" oninput="validarNombre()" />
-                <label class="form-label" for="nombre">Ingrese su Codigo</label>
+                <input type="text" id="codigo" class="form-control"/>
+                <label class="form-label" for="codigo">Ingrese su Codigo</label>
               </div>
             </div>
             <span class="text-danger" id="texto_codigo"></span>
@@ -344,11 +388,17 @@
             </div>
             <span class="text-danger" id="texto_programa"></span>
           </div>
-
+          
 
         </div>
         <br>
+        <div class="input-group  d-flex justify-content-center">
 
+          <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" data-mdb-toggle="modal" data-mdb-target="#myModal" onclick="datos_academicos()">
+            Guardar
+          </button>
+          
+        </div>
 
 
       </div>
